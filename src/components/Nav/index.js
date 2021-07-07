@@ -7,16 +7,12 @@ function Nav() {
       description: "A portfolio showcasing my full-stack developer projects.",
     },
     {
-      name: "portfolio",
-      description: "A portfolio showcasing my full-stack developer projects.",
+      name: "resume",
+      description: "A resume showcasing my educational and professional accomplishments and experience.",
     },
     {
-      name: "portfolio",
-      description: "A portfolio showcasing my full-stack developer projects.",
-    },
-    {
-      name: "portfolio",
-      description: "A portfolio showcasing my full-stack developer projects.",
+      name: "contact",
+      description: "Feel free to reach out to me!",
     },
   ];
 
@@ -25,7 +21,7 @@ function Nav() {
   }
 
   return (
-    <header>
+    <header className="flex-row px-1">
       <h2>
         <a href="/">
           <span role="img" aria-label="light-bulb">
