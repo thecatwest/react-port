@@ -1,48 +1,50 @@
-import React from "react";
+import React, { useEffect } from 'react';
+import { capitalizeFirstLetter } from '../../utils/helpers';
 
-function Nav() {
-  const categories = [
-    {
-      name: "portfolio",
-      description: "A portfolio showcasing my full-stack developer projects.",
-    },
-    {
-      name: "resume",
-      description: "A resume showcasing my educational and professional accomplishments and experience.",
-    },
-    {
-      name: "contact",
-      description: "Feel free to reach out to me!",
-    },
-  ];
+function Nav(props) {
+  const {
+    categories = [],
+    setCurrentCategory,
+    contactSelected,
+    currentCategory,
+    setContactSelected,
+  } = props;
 
-  function categorySelected(name) {
-    console.log(`${name} clicked`);
-  }
+  useEffect(() => {
+    document.title = capitalizeFirstLetter(currentCategory.name);
+  }, [currentCategory]);
 
   return (
     <header className="flex-row px-1">
       <h2>
-        <a href="/">
-          <span role="img" aria-label="light-bulb">
-            {" "}
-            💡
-          </span>{" "}
-          catwest.codes
+        <a data-testid="link" href="/">
+          <span role="img" aria-label="light-bulb"> 💡</span> Catwest.codes
         </a>
       </h2>
       <nav>
         <ul className="flex-row">
           <li className="mx-2">
-            <a href="#about">about me</a>
+            <a data-testid="about" href="#about" onClick={() => setContactSelected(false)}>
+              About me
+            </a>
           </li>
-          <li>
-            <span>contact</span>
+          <li className={`mx-2 ${contactSelected && 'navActive'}`}>
+            <span onClick={() => setContactSelected(true)}>Contact</span>
           </li>
           {categories.map((category) => (
-            <li className="mx-1" key={category.name}>
-              <span onClick={() => categorySelected(category.name)}>
-                {category.name}
+            <li
+              className={`mx-1 ${
+                currentCategory.name === category.name && !contactSelected && 'navActive'
+                }`}
+              key={category.name}
+            >
+              <span
+                onClick={() => {
+                  setCurrentCategory(category);
+                  setContactSelected(false);
+                }}
+              >
+                {capitalizeFirstLetter(category.name)}
               </span>
             </li>
           ))}
