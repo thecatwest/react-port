@@ -23,11 +23,11 @@ function Portfolio() {
     },
     {
       id: 3,
-      title: "The Gun Show",
-      link: "https://thawing-plains-49978.herokuapp.com/",
+      title: "Trade Secret",
+      link: "http://shawnlittrel-trade-secret.herokuapp.com/",
       github: "https://github.com/thecatwest/JustTechGunShow",
-      image: "../../assets/portfolio/gun-show.png",
-      description: "A social media app designed specifically with workouts in mind. Users can connect with other clients, create workout routines to share, and comment on other posts by users."
+      image: "../../assets/portfolio/crm-tools.png",
+      description: "A CRM tool that allows companies to control their service calls, etc from a single app."
     },
     {
       id: 4,
