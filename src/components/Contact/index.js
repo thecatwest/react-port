@@ -1,23 +1,30 @@
 import React from "react";
 
 
-
 function ContactCard(){
+//   const style = {
+//     // display: "inline",
+//     justifyContent: "center",
+//     alignItems: "center",
+// };
+
     return (
-      <section>
-        <h1>Want to work together? Let's chat!</h1>
+      <section className="contact-card">
+        <h1 id="contact">Contact</h1>
+
+        <h3 id="contact">Want to work together? Let's chat!</h3>
         <form id="contact-form">
-          <div>
-            <label htmlFor="name">name:</label>
+          <div className="textBox">
+            <label htmlFor="name">name: </label>
             <input type="text" name="name" />
           </div>
-          <div>
-            <label htmlFor="email">email:</label>
+          <div className="textBox">
+            <label htmlFor="email">email: </label>
             <input type="email" name="email" />
           </div>
-          <div>
-            <label htmlFor="message">tell me about it:</label>
-            <textarea name="message" rows="5" />
+          <div className="textBox">
+            <label htmlFor="message"></label>
+            <textarea name="message" placeholder="tell me about it: " rows="5" columns="10" />
           </div>
           <button type="submit">Send</button>
         </form>

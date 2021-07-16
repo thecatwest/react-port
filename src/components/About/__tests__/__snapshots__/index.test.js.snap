@@ -3,7 +3,7 @@
 exports[`About component matches snapshot DOM node structure 1`] = `
 <DocumentFragment>
   <section
-    class="my-5"
+    className="my-5"
   >
     <h1
       id="about"
@@ -12,7 +12,7 @@ exports[`About component matches snapshot DOM node structure 1`] = `
     </h1>
     <img
       alt="cover"
-      class="my-2"
+      className="my-2"
       src="cover-image.jpg"
       style="width: 100%;"
     />

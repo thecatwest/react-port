@@ -14,23 +14,27 @@ function Nav(props) {
     document.title = capitalizeFirstLetter(currentCategory.name);
   }, [currentCategory]);
 
+  const style={
+    color: "var(--secondary)"
+  };
+
   return (
     <header className="flex-row px-1">
       <h2>
         <a data-testid="link" href="/">
-          <span role="img" aria-label="light-bulb"> 💡</span> Catwest.codes
+          <span role="img" aria-label="cat-face"> 😸</span>catwest<span style={style}>.</span>codes
         </a>
       </h2>
       <nav>
         <ul className="flex-row">
-          <li className="mx-2">
+          {/* <li className="mx-2">
             <a data-testid="about" href="#about" onClick={() => setContactSelected(false)}>
               About me
             </a>
-          </li>
-          <li className={`mx-2 ${contactSelected && 'navActive'}`}>
+          </li> */}
+          {/* <li className={`mx-2 ${contactSelected && 'navActive'}`}>
             <span onClick={() => setContactSelected(true)}>Contact</span>
-          </li>
+          </li> */}
           {categories.map((category) => (
             <li
               className={`mx-1 ${
