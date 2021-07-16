@@ -1,18 +1,16 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { capitalizeFirstLetter } from '../../utils/helpers';
 
 function Nav(props) {
   const {
     categories = [],
     setCurrentCategory,
-    contactSelected,
-    currentCategory,
-    setContactSelected,
+    currentCategory
   } = props;
 
-  useEffect(() => {
-    document.title = capitalizeFirstLetter(currentCategory.name);
-  }, [currentCategory]);
+  // useEffect(() => {
+  //   document.title = capitalizeFirstLetter(currentCategory.name);
+  // }, [currentCategory]);
 
   const style={
     color: "var(--secondary)"
@@ -27,25 +25,40 @@ function Nav(props) {
       </h2>
       <nav>
         <ul className="flex-row">
-          {/* <li className="mx-2">
-            <a data-testid="about" href="#about" onClick={() => setContactSelected(false)}>
-              About me
+          <li className="mx-2">
+            <a data-testid="about" href="#about">
+              About
             </a>
-          </li> */}
+          </li> 
+          <li className="mx-2">
+            <a href="#portfolio">
+            Portfolio
+            </a>
+          </li> 
+          <li className="mx-2">
+            <a href="#resume">
+              Resume
+            </a>
+          </li> 
+          <li className="mx-2">
+            <a href="#contact">
+              Contact
+            </a>
+          </li> 
           {/* <li className={`mx-2 ${contactSelected && 'navActive'}`}>
             <span onClick={() => setContactSelected(true)}>Contact</span>
           </li> */}
           {categories.map((category) => (
             <li
               className={`mx-1 ${
-                currentCategory.name === category.name && !contactSelected && 'navActive'
+                currentCategory.name === category.name && 'navActive'
                 }`}
               key={category.name}
             >
               <span
                 onClick={() => {
                   setCurrentCategory(category);
-                  setContactSelected(false);
+                  // setContactSelected(false);
                 }}
               >
                 {capitalizeFirstLetter(category.name)}
