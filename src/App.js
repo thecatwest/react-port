@@ -5,29 +5,32 @@ import Nav from "./components/Nav/index";
 // import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import About from "./components/About/index";
 import Header from "./components/Header/index";
-import ContactCard from "./components/Contact/index";
+import ContactForm from "./components/Contact/index";
 import Footer from "./components/Footer/index";
 import Portfolio from "./components/Portfolio/index";
 import Resume from "./components/Resume/index";
+var dotenv = require('dotenv');
+
+dotenv.config();
 
 function App() {
   
   return (
     <div>
       <Header />
-      <Nav></Nav>
+      <Nav />
       <main>
           <>
-            <About></About>
+            <About />
             <br />
             <br />
-            <Portfolio></Portfolio>
+            <Portfolio />
             <br />
             <br />
             <Resume />
             <br />
             <br />
-            <ContactCard />
+            <ContactForm />
           </>
       </main>
       <Footer />
